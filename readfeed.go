@@ -81,3 +81,12 @@ func newObjectReader[T any](inputFeed *zip.ReadCloser, feedFilename string, writ
 		csvWriter:  csvWriter,
 	}, nil
 }
+
+func feedHasFile(feed *zip.ReadCloser, fileName string) bool {
+	for _, v := range feed.File {
+		if v.Name == fileName {
+			return true
+		}
+	}
+	return false
+}
