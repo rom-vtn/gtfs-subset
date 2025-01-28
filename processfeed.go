@@ -233,8 +233,9 @@ func processFeed(params Params) error {
 
 	var rawCopyFiles = map[string]bool{
 		"agency.txt":       true,
-		"feed_info.txt":    true, //fixme uhm actually it's "conditionally required" 🤓
+		"feed_info.txt":    false, //fixme uhm actually it's "conditionally required" 🤓
 		"attributions.txt": false,
+		"levels.txt":       false,
 	}
 
 	for fileName, required := range rawCopyFiles {
